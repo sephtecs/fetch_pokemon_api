@@ -6,9 +6,9 @@ function App() {
 const [pokemon, setPokemon] = useState([]); {
 
 const handleAPIcall = (event) => {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
-        .then(response => response.json(event))
-        .then(response => setPokemon(response.results))
+    axios.get('https://pokeapi.co/api/v2/pokemon?limit=151')
+        // .then(response => response.json(event))
+        .then(response => setPokemon(response.data.results))
 };
 
 return (
